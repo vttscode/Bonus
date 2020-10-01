@@ -1,0 +1,14 @@
+static void printBonusDatesBetween(int fromYear, int toYear) throws ParseException {
+        for (int i = fromYear; i < toYear; i++) {
+            String temp = String.valueOf(i);
+            String tempDate = temp + "-" + temp.charAt(3) + temp.charAt(2) + "-" + temp.charAt(1) + temp.charAt(0);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            dateFormat.setLenient(false);
+            try {
+                dateFormat.parse(tempDate);
+                System.out.println(tempDate);
+            } catch (ParseException e) {
+
+            }
+        }
+    }
